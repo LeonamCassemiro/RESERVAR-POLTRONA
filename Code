@@ -1,0 +1,37 @@
+algoritmo "Reservar Poltrona"
+var
+   B : vetor [1..10] de caractere
+   R : inteiro
+   Res : caractere
+   
+Procedimento Topo ()
+var i : inteiro
+Inicio
+      Para i <- 1 ate 10 faca
+           Se (B[i] = "") entao
+              Escreva ("[B", i,"]")
+           Senao
+                Escreva ("[---]")
+           FimSe
+      FimPara
+FimProcedimento
+
+Inicio
+      Repita
+            Topo()
+            Escreva("Qual cadeira você deseja reservar? B")
+            Leia (R)
+            Se (B[R] = "") entao
+               B[R] <- "X"
+               EscrevaL ("A cadeira B", R, " foi RESERVADA!")
+               Senao
+                    EscrevaL ("ERRO! A cadeira B", R, " já foi reservada!")
+            FimSe
+            Escreva ("Deseja reservar outra cadeira? [S/N]")
+            Leia (Res)
+            LimpaTela
+      Ate (Res = "N")
+      Escreva ("Obrigado! Sua reserva foi realizada com sucesso!")
+
+            
+FimAlgoritmo
